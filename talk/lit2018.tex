@@ -6,8 +6,16 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{url}
+\usepackage{ulem}
 
 \setbeamertemplate{navigation symbols}{}
+\setbeamercolor{alerted text}{fg=red!70!black}
+
+\newcommand{\soutthick}[1]{%
+  \renewcommand{\ULthickness}{2pt}%
+  \sout{#1}%
+  \renewcommand{\ULthickness}{.4pt}% Resetting to ulem default
+}
 
 \lstdefinestyle{customc}{
   belowcaptionskip=1\baselineskip,
@@ -86,7 +94,7 @@
 	 \item Uniwersytet Śląski, Kattowitz
 	 \item Simula Research Laboratory, Oslo
 	 \item Universität Augsburg
-	 \item Gymasien in Chorzów und Warschau
+	 \item Gymnasien in Chorzów und Warschau
 	 \item EDU-RES Chorzów
 	\end{itemize}
   \item 2017--2019 Erasmus+-Projekt Jupyter@edu\quad
@@ -105,18 +113,26 @@
 \begin{frame}{Welche Programmiersprache?}
 
  \vspace{1truecm}
- \uncover<2>{\includegraphics[width=0.5\textwidth]{python-logo-master-v3-TM}}
+ \uncover<2->{\includegraphics[width=0.5\textwidth]{python-logo-master-v3-TM}}
  \begin{itemize}
   \item Eignet sich die Programmiersprache für Anfänger?
-        \uncover<2>{\textcolor{green!70!black}{\ding{52}}}
+        \uncover<2->{\textcolor{green!70!black}{\ding{52}}}
   \item Eignet sich die Programmiersprache zur Verwendung
         in anderen Fächern, z.B. im naturwissenschaftlichen
         Unterricht?
-        \uncover<2>{\textcolor{green!70!black}{\ding{52}}}
+        \uncover<2->{\textcolor{green!70!black}{\ding{52}}}
   \item Eignet sich die Programmiersprache auch für reale
         Anwendungen in Wissenschaft und Industrie?
-        \uncover<2>{\textcolor{green!70!black}{\ding{52}}}
+        \uncover<2->{\textcolor{green!70!black}{\ding{52}}}
  \end{itemize}
+
+ \vspace{0.5truecm}
+ \begin{center}
+  \begin{Large}
+   \only<3>{Python 2 oder Python 3?}%
+   \only<4>{\soutthick{Python 2 oder} Python 3!}%
+  \end{Large}
+ \end{center}
 \end{frame}
 
 \begin{frame}{Was andere denken}
@@ -136,6 +152,28 @@
  most popular languages on Github 2017 (\url{octoverse.github.com})
 
  \includegraphics[width=\textwidth]{Screenshot-2018-4-12_GitHub_Octoverse_2017}
+\end{frame}
+
+\begin{frame}[c]{Warum Python?}
+ \begin{itemize}
+  \item Eigenschaften
+        \only<2>{%
+        \begin{itemize}
+         \item niedrige Lernbarriere durch expressiven und gut lesbaren Code
+         \item keine Fixierung auf ein Programmierparadigma
+               \begin{itemize}
+                \item objektorientiertes Programmieren
+                \item Elemente der funktionalen Programmierung
+               \end{itemize}
+         \item interpretierte Sprache\\
+               \begin{itemize}
+                \item schnelles Feedback
+                \item exploratives Lernen möglich
+               \end{itemize}
+        \end{itemize}}
+  \item Verfügbarkeit
+  \item Umfeld
+ \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Warum Python?}
@@ -194,17 +232,36 @@
  \end{columns}
 \end{frame}
 
-\begin{frame}{Warum Python?}
+\begin{frame}[c]{Warum Python?}
  \begin{itemize}
-  \item frei verfügbar für Windows, MacOS, Linux, \ldots
-  \item umfangreiche Distributionen frei verfügbar\\
-        für wissenschaftliche Anwendungen, Datenanalyse z.B.\\
-        Anaconda (\url{www.anaconda.com})
+  \item Eigenschaften
+  \item Verfügbarkeit
+        \only<2>{%
+        \begin{itemize}
+         \item frei verfügbar für Windows, MacOS, Linux, \ldots
+         \item niedrige Lernbarriere durch expressiven und gut lesbaren Code
+         \item umfangreiche Distributionen frei verfügbar\\
+               z.B. Anaconda (\url{www.anaconda.com}), \textasciitilde 3\,GB\\
+               vor allem für wissenschaftliche Anwendungen, Datenanalyse \ldots
+         \item Python kann webbasiert über Jupyterhub zur Verfügung gestellt
+               werden
+        \end{itemize}}
+  \item Umfeld
+        \only<3>{%
+        \begin{itemize}
+         \item umfangreiche freie Programmbibliotheken, auch
+               im wissenschaftlichen Bereich
+         \item Jupyter Notebook
+               \begin{itemize}
+                \item webbasiertes Arbeiten mit Python
+                \item Möglichkeit, Lernmaterialien zu verteilen
+                \item Möglichkeit, die Arbeit im Unterricht zu dokumentieren
+               \end{itemize}
+         \item nbgrader\\
+               System zur Verteilung, dem Einsammeln und Korrigieren von
+               Jupyter Notebooks
+        \end{itemize}}
  \end{itemize}
-\end{frame}
-
-\begin{frame}{Warum Python?}
- \structure{interpretierte Sprache erlaubt explorierendes Lernen}
 \end{frame}
 
 \begin{frame}{Das wissenschaftliche Ökosystem von Python}
@@ -237,19 +294,40 @@
  \end{columns}
 \end{frame}
 
-\begin{frame}{Warum Python?}
- \begin{itemize}
-  \item freie Verfügbarkeit für Windows, MacOS, Linux
-  \item umfangreiche freie Programmbibliotheken, auch
-        im wissenschaftlichen Bereich
-  \item interpretierte Sprache
-  \item keine Fixierung auf ein Programmierparadigma\\
-        objektorientiertes Programmieren möglich\\
-        Elemente der funktionalen Programmierung
- \end{itemize}
-\end{frame}
-
 \begin{frame}{Jupyter notebook}
+ \begin{columns}
+  \begin{column}{0.6\textwidth}
+   \only<1>{\includegraphics[height=0.9\textheight]{notebook_taylor}}%
+   \only<2>{\includegraphics[height=0.9\textheight]{notebook_taylor_text}}%
+   \only<3>{\includegraphics[height=0.9\textheight]{notebook_taylor_code}}%
+   \only<4>{\includegraphics[height=0.9\textheight]{notebook_taylor_math}}%
+   \only<5>{\includegraphics[height=0.9\textheight]{notebook_taylor_graph}}%
+   \only<6>{\includegraphics[height=0.9\textheight]{notebook_taylor_widget}}%
+   \only<7->{\includegraphics[height=0.9\textheight]{notebook_taylor}}%
+  \end{column}%
+  \begin{column}{0.4\textwidth}
+   \vspace{-8truecm}
+   \begin{itemize}
+    \item \small läuft im Browser
+    \item \small Notebookelemente:
+          \begin{itemize}
+           \item<alert@2> Textzellen
+           \item<alert@3> Codezellen
+           \item<alert@4> Formeln
+           \item<alert@5> graphische Ausgabe
+           \item<alert@6> Widgets
+          \end{itemize}
+    \item \small Umwandlung in verschiedene Formate (HTML, PDF, \ldots) möglich
+   \end{itemize}
+
+   \vspace{1truecm}
+   \begin{center}
+    \begin{Large}
+        \uncover<8>{\alert{\fbox{\ding{220} Demo}}}
+    \end{Large}
+   \end{center}
+  \end{column}
+ \end{columns}
 \end{frame}
 
 \end{document}

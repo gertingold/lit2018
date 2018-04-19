@@ -239,10 +239,10 @@
         \only<2>{%
         \begin{itemize}
          \item frei verfügbar für Windows, MacOS, Linux, \ldots
-         \item niedrige Lernbarriere durch expressiven und gut lesbaren Code
          \item umfangreiche Distributionen frei verfügbar\\
                z.B. Anaconda (\url{www.anaconda.com}), \textasciitilde 3\,GB\\
-               vor allem für wissenschaftliche Anwendungen, Datenanalyse \ldots
+               vor allem für wissenschaftliche Anwendungen, Datenanalyse \ldots\\
+               enthält auch Entwicklungsumgebung Spyder
          \item Python kann webbasiert über Jupyterhub zur Verfügung gestellt
                werden
         \end{itemize}}
@@ -328,6 +328,55 @@
    \end{center}
   \end{column}
  \end{columns}
+\end{frame}
+
+\begin{frame}{nbgrader}
+ \begin{columns}
+  \begin{column}{0.7\textwidth}
+   System zum Verteilen, Einsammeln und Korrigieren von Jupyter Notebooks
+
+   \vspace{0.5\baselineskip}
+   Quelle:\\
+   \small{\url{https://github.com/jupyter/nbgrader}}
+
+   \vspace{0.5\baselineskip}
+   Dokumentation:\\
+   \small{\url{http://nbgrader.readthedocs.io/en/stable/}}
+  \end{column}%
+  \begin{column}{0.3\textwidth}
+   \begin{center}
+    \vspace{-0.7truecm}
+    \includegraphics[width=0.8\textwidth]{hamrick}
+
+    Jessica B. Hamrick
+   \end{center}
+  \end{column}
+ \end{columns}
+
+ \vspace{1truecm}
+ \begin{itemize}
+  \item Kommandozeilenbefehle für Verwaltung von Übungsaufgaben und
+        Übungsteilnehmern
+  \item Erweiterung für Jupyter Notebook für graphisches Benutzerinterface
+  \item Verwendung mit Jupyterhub
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{nbgrader}
+ \begin{center}
+  \includegraphics[height=0.85\textheight]{nbgrader}
+ \end{center}
+\end{frame}
+
+\begin{frame}{nbgrader}
+ \begin{center}
+  \includegraphics[width=\textwidth]{nbgradercells}
+
+  \vspace{1truecm}
+  \begin{Large}
+  \alert{\fbox{\ding{220} Demo}}
+  \end{Large}
+ \end{center}
 \end{frame}
 
 \end{document}

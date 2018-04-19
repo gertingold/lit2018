@@ -1,7 +1,7 @@
 .PHONY: all cleantex clean
 
 _imgdownload = eu_flag_co_funded_pos_[rgb]_right.jpg python-logo-master-v3-TM.png \
-               Top39-700_4.png sln_logo.png
+               Top39-700_4.png sln_logo.png hamrick.jpg
 
 all: lit2018.tex $(_imgdownload)
 	pdflatex lit2018.tex
@@ -18,15 +18,18 @@ Top39-700_4.png:
 	mv Top39-700.4.png Top39-700_4.png
 
 sln_logo.svg:
-	wget https://www.scipy-lectures.org/_images/logo.svg
+	wget -O sln_logo.svg https://www.scipy-lectures.org/_images/logo.svg
 
 sln_logo.png: sln_logo.svg
-	inkscape -z -e sln_logo.png -w 1024 logo.svg
+	inkscape -z -e sln_logo.png -w 1024 sln_logo.svg
+
+hamrick.jpg:
+	wget -O hamrick.jpg https://avatars0.githubusercontent.com/u/83444?s=400&v=4
 
 cleantex:
-	rm lit2018.aux lit2018.log lit2018.nav lit2018.out \
-	   lit2018.snm lit2018.toc lit2018.vrb
+	rm -f lit2018.aux lit2018.log lit2018.nav lit2018.out \
+	      lit2018.snm lit2018.toc lit2018.vrb
 
 clean: cleantex
 	rm $(_imgdownload)
-	rm logo.svg
+	rm sln_logo.svg

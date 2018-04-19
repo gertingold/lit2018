@@ -29,4 +29,4 @@ cleantex:
 
 clean: cleantex
 	rm $(_imgdownload)
-	rm sln_logo.png
+	rm logo.svg

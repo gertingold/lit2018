@@ -219,4 +219,9 @@ TSWLatexianTemp*
 # expex forward references with \gathertags
 *-tags.tex
 
-eu_flag_co_funded_pos_\[rgb\]_right.jpg
+/talk/eu_flag_co_funded_pos_\[rgb\]_right.jpg
+/talk/Top39-700_4.png
+/talk/logo.svg
+/talk/python-logo-master-v3-TM.png
+/talk/sln_logo.png
+.ipynb_checkpoints/

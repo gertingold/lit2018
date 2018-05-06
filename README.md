@@ -1,5 +1,5 @@
 # LIT2018: Python im Unterricht
-Vortrag beim Linux-Infotag 2018 am 21.4.2018 in Augsburg.
+Vortrag beim [Linux-Infotag 2018](https://www.luga.de/Aktionen/LIT-2018/) am 21.4.2018 in Augsburg.
 
 [Python](https://www.python.org) ist nicht nur eine zunehmend populäre
 Programmiersprache, sondern auch sehr gut für den computergestützten Unterricht
